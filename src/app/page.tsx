@@ -10,6 +10,7 @@ import { MotionItem } from "@/components/MotionItem";
 import { Marquee } from "@/components/Marquee";
 import { Star } from "@/components/civic";
 import { Stamp } from "@/components/Stamp";
+import { EcosystemIconFrame } from "@/components/EcosystemIcon";
 
 const foundingChapters = [
   {
@@ -180,9 +181,7 @@ export default function Home() {
             {ecosystem.slice(0, 4).map((p) => (
               <MotionItem key={p.slug} variants={staggerItem}>
                 <div className="group h-full doc-panel p-6 transition-all duration-300 hover:-translate-y-1 hover:ring-gold">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-sm border border-gold/25 bg-gold/5 font-display text-xl text-gold">
-                    {p.glyph}
-                  </div>
+                  <EcosystemIconFrame slug={p.slug} size="sm" />
                   <div className="mt-4 font-display text-xl font-semibold text-cream">
                     {p.name}
                   </div>

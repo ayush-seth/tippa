@@ -9,7 +9,6 @@ export const ecosystem: EcosystemProduct[] = [
       "A sovereign financial system for tracking every rupee, every round, and every 'I'll pay you back' the Republic has ever heard. Built to make forgetting impossible.",
     bullets: ["Party debt", "Birthday debt", "Merch debt", "Emotional debt"],
     status: "Coming Soon",
-    glyph: "₹",
   },
   {
     slug: "tippabnb",
@@ -19,7 +18,6 @@ export const ecosystem: EcosystemProduct[] = [
       "Find a place to crash anywhere in the Republic. From premium guest mattresses to negotiable floor space, TippaBnB connects the tired with the slightly-less-tired.",
     bullets: ["258 listings", "102 verified hosts", "Guest mattresses", "Floor space"],
     status: "Coming Soon",
-    glyph: "⌂",
   },
   {
     slug: "marketplace",
@@ -29,7 +27,6 @@ export const ecosystem: EcosystemProduct[] = [
       "The Republic's open economy. A trusted marketplace for citizens to exchange the things they bought impulsively and the opinions nobody asked for.",
     bullets: ["Unused gym memberships", "IPL opinions", "Board games", "Questionable purchases"],
     status: "Coming Soon",
-    glyph: "◇",
   },
   {
     slug: "codenames",
@@ -39,7 +36,6 @@ export const ecosystem: EcosystemProduct[] = [
       "The Republic's state-sponsored take on the classic word game. Two rival factions face off while their Comrade Spymaster delivers single-word clues to rally the masses to the correct cards. Glory to the team that decodes first; shame upon the faction that picks the assassin.",
     bullets: ["Two rival factions", "Comrade Spymaster", "One-word clues only", "Eternal bragging rights"],
     status: "In Development",
-    glyph: "▦",
   },
   {
     slug: "merch",
@@ -49,7 +45,6 @@ export const ecosystem: EcosystemProduct[] = [
       "Wear the Republic with pride. The official source for national apparel, seals, and regalia. All unofficial merch is, regrettably, treason.",
     bullets: ["National apparel", "Official seals", "Founding edition", "Citizen regalia"],
     status: "Launching Soon",
-    glyph: "✦",
   },
   {
     slug: "league",
@@ -59,7 +54,6 @@ export const ecosystem: EcosystemProduct[] = [
       "Home of the Tippa Premier League and every invented rivalry it spawns. Drafts, standings, and at least one suspiciously timed injury per match.",
     bullets: ["Premier League", "Live standings", "Player drafts", "Eternal rivalries"],
     status: "In Development",
-    glyph: "✸",
   },
   {
     slug: "archives",
@@ -69,7 +63,6 @@ export const ecosystem: EcosystemProduct[] = [
       "Every memory, meme, and moment, preserved for eternity. The permanent record of the Republic, indexed, searchable, and impossible to delete (we tried).",
     bullets: ["National lore", "Historic memes", "Founding documents", "Permanent record"],
     status: "Coming Soon",
-    glyph: "▤",
   },
   {
     slug: "live",
@@ -79,6 +72,5 @@ export const ecosystem: EcosystemProduct[] = [
       "Breaking news from across the Republic, broadcast around the clock. Covering proclamations, scandals, and the occasional manufactured controversy.",
     bullets: ["Breaking news", "Live proclamations", "Scandal desk", "24-hour coverage"],
     status: "Under Construction",
-    glyph: "◉",
   },
 ];

@@ -46,5 +46,4 @@ export type EcosystemProduct = {
   description: string;
   bullets: string[];
   status: "Coming Soon" | "Launching Soon" | "In Development" | "Under Construction";
-  glyph: string;
 };

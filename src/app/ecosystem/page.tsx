@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { Stagger, staggerItem } from "@/components/Reveal";
 import { MotionItem } from "@/components/MotionItem";
 import { Stamp } from "@/components/Stamp";
+import { EcosystemIconFrame } from "@/components/EcosystemIcon";
 
 export const metadata: Metadata = {
   title: "National Ecosystem",
@@ -59,9 +60,7 @@ export default function EcosystemPage() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-gold/25 bg-gradient-to-br from-gold/10 to-transparent font-display text-2xl text-gold">
-                    {p.glyph}
-                  </div>
+                  <EcosystemIconFrame slug={p.slug} size="md" />
                   <span
                     className={`rounded-full border px-3 py-1 text-[10px] font-medium uppercase tracking-widest ${statusStyle[p.status]}`}
                   >
