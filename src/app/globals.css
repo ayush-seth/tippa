@@ -1,0 +1,348 @@
+@import "tailwindcss";
+
+/* ===========================================================
+   The Republic of Tippa — National Design System
+   =========================================================== */
+
+@theme {
+  /* Worn Eastern-bloc base — desaturated brown-grays */
+  --color-charcoal: #14120d;
+  --color-charcoal-2: #1b1812;
+  --color-charcoal-3: #26221a;
+  --color-ink: #0c0a07;
+
+  /* Aged document paper / typewriter ink */
+  --color-cream: #d9d1bd;
+  --color-cream-dim: #a89f87;
+  --color-cream-faint: #756c58;
+
+  /* Dull communist red / brick ink */
+  --color-burgundy: #8a2f28;
+  --color-burgundy-bright: #ab3b2e;
+  --color-burgundy-deep: #561c17;
+
+  /* Desaturated brass (worn gold seal) */
+  --color-gold: #b39a5c;
+  --color-gold-bright: #ceb574;
+  --color-gold-deep: #7a672f;
+
+  /* Sickly checkpoint accents */
+  --color-olive: #717544;
+  --color-teal: #3f6b61;
+  --color-amber: #b5883a;
+  --color-stamp-green: #8fbc6a;
+  --color-stamp-red: #d45645;
+  --color-stamp-blue: #6a9e92;
+
+  --font-display: var(--font-oswald);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+
+  --color-background: var(--color-charcoal);
+  --color-foreground: var(--color-cream);
+}
+
+* {
+  border-color: color-mix(in oklab, var(--color-cream) 8%, transparent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Ambient checkpoint backdrop — drab, oppressive, vignetted */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(60rem 60rem at 12% -10%, rgba(138, 47, 40, 0.16), transparent 60%),
+    radial-gradient(48rem 48rem at 95% 8%, rgba(113, 117, 68, 0.08), transparent 55%),
+    radial-gradient(70rem 70rem at 50% 120%, rgba(63, 107, 97, 0.07), transparent 60%),
+    radial-gradient(120% 120% at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.55) 100%),
+    var(--color-charcoal);
+}
+
+/* Fine paper grain */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* CRT scanlines + vignette overlay */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.16) 0px,
+    rgba(0, 0, 0, 0.16) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+}
+.crt-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 18rem rgba(0, 0, 0, 0.65);
+}
+
+::selection {
+  background: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-charcoal);
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--color-burgundy) 60%, var(--color-charcoal));
+  border-radius: 99px;
+  border: 3px solid var(--color-charcoal);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-burgundy-bright);
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+  }
+  .font-mono {
+    font-family: var(--font-mono), ui-monospace, monospace;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(95deg, var(--color-gold-bright), var(--color-gold) 45%, var(--color-gold-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-cream {
+    background: linear-gradient(180deg, var(--color-cream), color-mix(in oklab, var(--color-cream) 60%, var(--color-cream-faint)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-red {
+    background: linear-gradient(95deg, var(--color-burgundy-bright), var(--color-burgundy) 60%, var(--color-burgundy-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Glassmorphism panels */
+  .glass {
+    background: linear-gradient(
+      160deg,
+      color-mix(in oklab, var(--color-cream) 6%, transparent),
+      color-mix(in oklab, var(--color-cream) 2%, transparent)
+    );
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid color-mix(in oklab, var(--color-cream) 10%, transparent);
+  }
+  .glass-strong {
+    background: linear-gradient(
+      160deg,
+      color-mix(in oklab, var(--color-cream) 9%, transparent),
+      color-mix(in oklab, var(--color-charcoal-3) 70%, transparent)
+    );
+    backdrop-filter: blur(20px) saturate(130%);
+    -webkit-backdrop-filter: blur(20px) saturate(130%);
+    border: 1px solid color-mix(in oklab, var(--color-cream) 12%, transparent);
+  }
+
+  /* Floating nav bar only — opaque + blur so scroll text stays readable */
+  .nav-float {
+    background: color-mix(in oklab, var(--color-charcoal-2) 94%, black);
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    border: 1px solid color-mix(in oklab, var(--color-cream) 16%, transparent);
+    border-radius: 4px;
+    box-shadow:
+      inset 0 0 0 1px color-mix(in oklab, var(--color-cream) 6%, transparent),
+      0 12px 40px -16px rgba(0, 0, 0, 0.8);
+  }
+
+  .ring-gold {
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-gold) 35%, transparent),
+      0 18px 50px -20px rgba(216, 179, 94, 0.35);
+  }
+  .ring-burgundy {
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-burgundy) 45%, transparent),
+      0 18px 50px -20px rgba(142, 36, 52, 0.45);
+  }
+
+  .glow-burgundy {
+    box-shadow: 0 24px 80px -28px rgba(177, 49, 69, 0.55);
+  }
+  .glow-gold {
+    box-shadow: 0 24px 80px -30px rgba(216, 179, 94, 0.5);
+  }
+
+  .hairline {
+    border: 1px solid color-mix(in oklab, var(--color-cream) 9%, transparent);
+  }
+
+  /* dotted seal border */
+  .seal-ring {
+    background-image: repeating-conic-gradient(
+      from 0deg,
+      var(--color-gold) 0deg 4deg,
+      transparent 4deg 8deg
+    );
+  }
+
+  .tracking-civic {
+    letter-spacing: 0.28em;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(color-mix(in oklab, var(--color-cream) 4%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklab, var(--color-cream) 4%, transparent) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  /* ---- Papers, Please document system ---- */
+  .font-display {
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  /* Official document panel: hard edges, ruled border */
+  .doc-panel {
+    background:
+      linear-gradient(180deg, color-mix(in oklab, var(--color-cream) 5%, transparent), color-mix(in oklab, var(--color-charcoal-2) 80%, transparent));
+    border: 1px solid color-mix(in oklab, var(--color-cream) 16%, transparent);
+    box-shadow:
+      inset 0 0 0 1px color-mix(in oklab, var(--color-cream) 5%, transparent),
+      inset 0 0 60px rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+  }
+
+  /* Perforated / dashed top + bottom edges (stub ticket) */
+  .perforated {
+    border-top: 2px dashed color-mix(in oklab, var(--color-cream) 22%, transparent);
+    border-bottom: 2px dashed color-mix(in oklab, var(--color-cream) 22%, transparent);
+  }
+
+  /* Ruled inspection form rows */
+  .ruled > * + * {
+    border-top: 1px dashed color-mix(in oklab, var(--color-cream) 14%, transparent);
+  }
+
+  .label {
+    font-family: var(--font-mono), monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 10px;
+  }
+
+  /* Decorative stamp — light distress (hero, memos) */
+  .stamp {
+    font-family: var(--font-display), sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border: 2.5px solid currentColor;
+    border-radius: 4px;
+    padding: 0.3rem 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+    opacity: 1;
+    line-height: 1.15;
+    background: color-mix(in oklab, currentColor 14%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, currentColor 25%, transparent);
+  }
+
+  /* Status & primary stamps — bold, horizontal, fully legible */
+  .stamp-bold {
+    font-family: var(--font-display), sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    border: 3px solid currentColor;
+    border-radius: 4px;
+    padding: 0.4rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    line-height: 1.2;
+    opacity: 1;
+    transform: none;
+    background: color-mix(in oklab, currentColor 18%, transparent);
+    box-shadow:
+      inset 0 0 0 1px color-mix(in oklab, currentColor 30%, transparent),
+      0 2px 8px -4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 12px color-mix(in oklab, currentColor 40%, transparent);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 26s linear infinite; }
+.animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
