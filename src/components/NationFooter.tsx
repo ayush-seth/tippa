@@ -7,7 +7,6 @@ const cols: { title: string; links: { href: string; label: string }[] }[] = [
     title: "The Republic",
     links: [
       { href: "/citizens", label: "Citizens" },
-      { href: "/ministries", label: "Ministries" },
       { href: "/constitution", label: "Constitution" },
     ],
   },

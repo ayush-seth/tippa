@@ -20,7 +20,7 @@ export function Hero() {
       </div>
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[36rem] bg-grid opacity-[0.18] [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
 
-      <div className="mx-auto max-w-3xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
         {/* Stencil checkpoint banner */}
         <motion.div
           initial={{ opacity: 0, y: -8 }}
@@ -51,7 +51,10 @@ export function Hero() {
 
           <div className="flex justify-center">
             <div className="animate-float-slow">
-              <Seal size={92} className="glow-gold" />
+              <Seal
+                size={128}
+                className="[filter:drop-shadow(0_10px_28px_rgba(216,179,94,0.45))]"
+              />
             </div>
           </div>
 

@@ -1,35 +1,10 @@
-export const preamble =
-  "We, the Citizens of Tippa, in order to form a more perfect friendship, establish justice for unpaid splits, ensure domestic celebration, provide for the common aux, promote the general vibe, and secure the blessings of liberty to ourselves and our future group photos, do ordain and establish this Constitution for the Republic of Tippa.";
-
-export const articles: { numeral: string; title: string; text: string }[] = [
-  { numeral: "I", title: "On Celebration", text: "Every achievement shall eventually require a party." },
-  { numeral: "II", title: "On Memory", text: "Forgotten parties remain legally enforceable." },
-  { numeral: "III", title: "On Attendance", text: "Attendance excuses must withstand public scrutiny." },
-  { numeral: "IV", title: "On Heritage", text: "Historical memes shall be preserved in perpetuity." },
-  { numeral: "V", title: "On Birthdays", text: "No citizen may escape birthday obligations." },
-  { numeral: "VI", title: "On Debt", text: "A debt unpaid is a debt remembered, with interest applied lovingly." },
-  { numeral: "VII", title: "On Punctuality", text: "'On my way' is a state of mind, not a location." },
-  { numeral: "VIII", title: "On the Aux", text: "Authority over the aux cord is sacred and non-transferable without consent." },
-  { numeral: "IX", title: "On Food", text: "The final slice belongs to no one until claimed aloud." },
-  { numeral: "X", title: "On Splits", text: "The bill shall be split fairly, and 'I only had water' shall be investigated." },
-  { numeral: "XI", title: "On Employment", text: "New employment is a national event and shall be celebrated accordingly." },
-  { numeral: "XII", title: "On Plans", text: "A plan made in the group chat is binding, even if everyone forgets it." },
-  { numeral: "XIII", title: "On Confidence", text: "Confidence may substitute for competence in non-critical matters." },
-  { numeral: "XIV", title: "On Festivals", text: "All national festivals shall be observed, regardless of distance or excuse." },
-  { numeral: "XV", title: "On Photographs", text: "No gathering is complete until one acceptable group photo exists." },
-  { numeral: "XVI", title: "On Reunions", text: "The phrase 'we should meet up' creates a moral, if not legal, obligation." },
-  { numeral: "XVII", title: "On Competition", text: "All sporting injuries appearing only during fielding are presumed fictional." },
-  { numeral: "XVIII", title: "On Gossip", text: "Intelligence shared in confidence shall remain confidential for at least one hour." },
-  { numeral: "XIX", title: "On Merch", text: "Unofficial merchandise bearing the national seal constitutes treason." },
-  { numeral: "XX", title: "On Silence", text: "Leaving the group chat is permitted; rejoining within a week is mandatory." },
-  { numeral: "XXI", title: "On Apologies", text: "An apology delivered via meme is valid and fully binding." },
-  { numeral: "XXII", title: "On Reserves", text: "The Strategic Beer Reserve shall never knowingly run dry." },
-  { numeral: "XXIII", title: "On Health", text: "National health drives expire automatically upon the first birthday announcement." },
-  { numeral: "XXIV", title: "On Travel", text: "A trip discussed three times is legally considered 'planned.'" },
-  { numeral: "XXV", title: "On Disputes", text: "Any argument may be ended by ordering more food." },
-  { numeral: "XXVI", title: "On Honour", text: "The friend who pays first shall be honoured, then quietly reimbursed." },
-  { numeral: "XXVII", title: "On Loyalty", text: "No citizen shall be left on read during a national crisis." },
-  { numeral: "XXVIII", title: "On Time", text: "The 'Mayank Minute' is the official national unit of delay." },
-  { numeral: "XXIX", title: "On Legacy", text: "Every inside joke shall be archived and may never be explained to outsiders." },
-  { numeral: "XXX", title: "On Friendship", text: "Friendship is infrastructure and shall be maintained as critical national property." },
-];
+/** Full text of the Constitution of Tippa (preamble). */
+export const preamble = [
+  "WE, THE CITIZENS OF TIPPA, IN ORDER TO FORM A MORE PERFECT FRIENDSHIP, ESTABLISH JUSTICE FOR UNPAID SPLITS, PROMOTE FELLOWSHIP, PRESERVE OUR MEMORIES, CELEBRATE LIFE'S MILESTONES, AND SECURE THE BLESSINGS OF GOOD COMPANY FOR OURSELVES AND FUTURE CITIZENS, DO ORDAIN AND ESTABLISH THIS CONSTITUTION FOR THE REPUBLIC OF TIPPA.",
+  "Founded upon the belief that no achievement should go uncelebrated, no citizen should eat alone when others are available, and no promised party shall be forgotten by the passage of time.",
+  "Recognizing that history is written not only by great nations, but also by friend groups with excessive documentation, inside jokes, and an alarming number of committees.",
+  "Affirming that friendship carries with it certain sacred obligations, including but not limited to showing up, checking in, participating in group photos, responding eventually, and contributing to the collective archive of memories.",
+  "Acknowledging that every citizen possesses the inalienable rights to celebration, companionship, unreasonable confidence, and public roasting when circumstances clearly warrant it.",
+  "And accepting that some events, decisions, scandals, hairstyles, bets, financial choices, and late-night messages may forever remain part of the historical record regardless of future regret.",
+  "Therefore, with full knowledge of the responsibilities, privileges, and inevitable embarrassment that citizenship entails, we establish this Constitution so that the Republic of Tippa may endure, prosper, and continue generating stories far beyond what any sensible organization would permit.",
+] as const;

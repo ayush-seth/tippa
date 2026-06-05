@@ -78,7 +78,7 @@ export const announcements: Announcement[] = [
     date: "Founding Year · Founding Day",
     ministry: "Office of the Architect",
     body:
-      "The State confirms the completion of the first National Census. The Republic of Tippa is hereby recorded as 17 citizens strong, 12 of whom hold active ministerial titles, and all of whom owe someone something. The National Happiness Index stands at a historic 96%. The remaining 4% is attributed entirely to unsettled splits.",
+      "The State confirms the completion of the first National Census. The Republic of Tippa is hereby recorded as 12 citizens strong, 5 of whom hold ministerial portfolios, and all of whom owe someone something. The National Happiness Index stands at a historic 96%. The remaining 4% is attributed entirely to unsettled splits.",
     refs: ["National Statistics", "Ministry of Finance"],
   },
 ];

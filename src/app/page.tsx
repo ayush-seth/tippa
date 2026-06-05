@@ -2,8 +2,9 @@ import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { StatsGrid } from "@/components/StatsGrid";
 import { Reveal, Stagger, staggerItem } from "@/components/Reveal";
-import { Avatar } from "@/components/Avatar";
 import { citizens } from "@/lib/citizens";
+import { ClassifiedDossierCard } from "@/components/ClassifiedDossierCard";
+import { REGISTRY_STATUS, registryStatusForIndex } from "@/lib/citizens-registry";
 import { ecosystem } from "@/lib/ecosystem";
 import { MotionItem } from "@/components/MotionItem";
 import { Marquee } from "@/components/Marquee";
@@ -99,46 +100,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Citizens preview */}
+      {/* Citizen Registry — classified preview */}
       <section className="relative py-20">
         <div className="mx-auto max-w-6xl px-6">
           <Reveal>
             <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <div className="flex items-center gap-3">
+              <div className="max-w-2xl">
+                <div className="flex flex-wrap items-center gap-3">
                   <Star className="h-3.5 w-3.5 text-burgundy-bright" />
                   <span className="text-[11px] uppercase tracking-civic text-gold/80">
-                    The People
+                    Ministry of Records
                   </span>
+                  <Stamp label={REGISTRY_STATUS} tone="gold" size="sm" withStar={false} />
                 </div>
                 <h2 className="mt-4 font-display text-4xl font-semibold text-cream sm:text-5xl">
-                  Citizens of the Republic
+                  Citizen Registry
                 </h2>
+                <p className="mt-3 text-sm leading-relaxed text-cream-dim sm:text-base">
+                  The Republic&apos;s official database of citizens, achievements, scandals,
+                  party debt, constitutional violations, and historical contributions.
+                </p>
               </div>
               <Link
                 href="/citizens"
                 className="text-sm font-medium text-gold transition-colors hover:text-gold-bright"
               >
-                View full directory →
+                Registry status →
               </Link>
             </div>
           </Reveal>
 
-          <Stagger className="mt-10 flex flex-wrap justify-center gap-5">
-            {citizens.slice(0, 8).map((c) => (
-              <MotionItem key={c.slug} variants={staggerItem}>
-                <Link
-                  href={`/citizens/${c.slug}`}
-                  className="group flex w-40 flex-col items-center text-center"
-                >
-                  <Avatar photo={c.photo} name={c.name} size={104} className="transition-transform duration-500 group-hover:scale-105 group-hover:ring-gold/60" />
-                  <div className="mt-3 font-display text-lg font-semibold text-cream">
-                    {c.name}
-                  </div>
-                  <div className="mt-0.5 text-[11px] leading-snug text-cream-faint">
-                    {c.title.split(" of ")[0]}
-                  </div>
-                </Link>
+          <Reveal delay={0.05}>
+            <p className="mt-6 max-w-3xl text-sm italic text-cream-faint">
+              Dossiers on file. Identities withheld. Public inspection not yet authorized.
+            </p>
+          </Reveal>
+
+          <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {citizens.slice(0, 8).map((_, i) => (
+              <MotionItem key={i} variants={staggerItem} className="h-full">
+                <ClassifiedDossierCard
+                  compact
+                  fileId={`FILE-${String(i + 1).padStart(3, "0")}`}
+                  statusLabel={registryStatusForIndex(i)}
+                  clearance={`CLR-${(i % 4) + 1}`}
+                />
               </MotionItem>
             ))}
           </Stagger>

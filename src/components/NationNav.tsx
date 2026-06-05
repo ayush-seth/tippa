@@ -7,7 +7,6 @@ import { Seal } from "./Seal";
 
 const links = [
   { href: "/citizens", label: "Citizens" },
-  { href: "/ministries", label: "Ministries" },
   { href: "/announcements", label: "Announcements" },
   { href: "/ecosystem", label: "Ecosystem" },
   { href: "/constitution", label: "Constitution" },
@@ -62,6 +61,11 @@ export function NationNav() {
                     <span className="absolute inset-0 -z-10 rounded-lg border border-gold/20 bg-gold/5" />
                   )}
                   {l.label}
+                  {l.href === "/citizens" && (
+                    <span className="ml-1.5 rounded border border-gold/25 bg-gold/5 px-1 py-px text-[8px] font-semibold uppercase tracking-wider text-gold/90">
+                      Soon
+                    </span>
+                  )}
                 </Link>
               );
             })}
@@ -94,6 +98,11 @@ export function NationNav() {
                 className="rounded-lg px-3 py-2.5 text-sm text-cream-dim hover:bg-cream/5 hover:text-cream"
               >
                 {l.label}
+                {l.href === "/citizens" && (
+                  <span className="ml-1.5 rounded border border-gold/25 bg-gold/5 px-1 py-px text-[8px] font-semibold uppercase tracking-wider text-gold/90">
+                    Soon
+                  </span>
+                )}
               </Link>
             ))}
             <Link
