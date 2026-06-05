@@ -26,7 +26,7 @@ function MarqueeTrack({
       : "border-y border-cream/10 bg-cream/[0.02]";
 
   const loop = [...display, ...display];
-  const duration = Math.max(56, display.length * 2.6);
+  const duration = Math.max(95, display.length * 4.2);
 
   return (
     <div className={`relative overflow-hidden py-3 ${base} ${className}`}>
